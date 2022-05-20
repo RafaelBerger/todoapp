@@ -1,11 +1,11 @@
-import { Container, Typography } from '@mui/material';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import { useEffect, useState } from 'react';
-import './App.scss';
-import TaskBar from './component/taskBar/TaskBar';
-import fakeTasks from './fakeTasks.json';
+import { Container, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import { useEffect, useState } from "react";
+import "./App.scss";
+import TaskBar from "./component/taskBar/TaskBar";
+import fakeTasks from "./fakeTasks.json";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -15,8 +15,12 @@ function App() {
   }, []);
 
   return (
-    <Container sx={{ paddingY: '2rem' }} className='display-column'>
-      <Typography component='h1' variant='h3'>
+    <Container sx={{ paddingY: "2rem" }} className='display-column'>
+      <Typography
+        component='h1'
+        variant='h3'
+        sx={{ color: "#86019b", fontWeight: "600", fontFamily: "Poppins" }}
+      >
         Anotações
       </Typography>
       <Box className='input-task-box'>
@@ -27,7 +31,7 @@ function App() {
       </Box>
       <Box>
         {tasks.map((task) => {
-          return <TaskBar taskTitle={task.title} />;
+          return <TaskBar key={task.id} taskTitle={task.title} />;
         })}
       </Box>
     </Container>
