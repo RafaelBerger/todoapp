@@ -1,0 +1,26 @@
+@import '../../index.scss';
+
+.taskbar-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 800px;
+  height: 5vh;
+  max-width: 100%;
+  background-color: $primary_color;
+  border-radius: 5px;
+  color: white;
+  margin-top: 5rem;
+}
+
+.taskbar-title {
+  padding: 0 15px;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.taskbar-icons {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}

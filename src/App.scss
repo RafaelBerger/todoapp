@@ -1,0 +1,20 @@
+@import './index.scss';
+
+.display-column {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-task-box {
+  max-width: 500px;
+  width: 100%;
+  margin: 1.5rem 0;
+  display: flex;
+}
+
+.add-task-button {
+  margin-left: 1rem !important;
+  background-color: $primary_color !important;
+}
