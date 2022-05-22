@@ -1,8 +1,0 @@
-{
-  "tasks": [
-    { "id": 1, "title": "Estudar Javascript" },
-    { "id": 2, "title": "Estudar back-end" },
-    { "id": 3, "title": "Popular o banco mongo atlas" },
-    { "id": 4, "title": "Estudar Sass " }
-  ]
-}
