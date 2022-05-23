@@ -1,11 +1,11 @@
-@import "../../index.scss";
+@import '../../index.scss';
 
 .taskbar-box {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 800px;
-  height: 4rem;
+  min-height: 4rem;
   max-width: 100%;
   background-color: $primary_color;
   border-radius: 5px;
