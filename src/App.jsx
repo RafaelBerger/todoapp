@@ -3,12 +3,13 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { useEffect, useState } from 'react';
-import { getAllTasks } from './api/tasksApi';
+import { getAllTasks, postTask } from './api/tasksApi';
 import './App.scss';
 import TaskBar from './component/taskBar/TaskBar';
 
 function App() {
   const [tasks, setTasks] = useState([]);
+  const [taskInput, setTaskInput] = useState('');
 
   useEffect(() => {
     const callAPI = async () => {
@@ -18,6 +19,19 @@ function App() {
 
     callAPI();
   }, []);
+
+  const onChangeTaskInput = (e) => {
+    setTaskInput(e.target.value);
+  };
+
+  const saveNewTask = async () => {
+    await postTask(taskInput);
+
+    setTaskInput('');
+
+    const response = await getAllTasks();
+    setTasks(response.data.dados);
+  };
 
   return (
     <Container sx={{ paddingY: '2rem' }} className='display-column'>
@@ -29,8 +43,17 @@ function App() {
         Anotações
       </Typography>
       <Box className='input-task-box'>
-        <TextField fullWidth label='Digite sua tarefa' />
-        <Button className='add-task-button' variant='contained'>
+        <TextField
+          fullWidth
+          label='Digite sua tarefa'
+          value={taskInput}
+          onInput={onChangeTaskInput}
+        />
+        <Button
+          className='add-task-button'
+          variant='contained'
+          onClick={saveNewTask}
+        >
           Adicionar
         </Button>
       </Box>
