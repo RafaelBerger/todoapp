@@ -25,12 +25,16 @@ function App() {
   };
 
   const saveNewTask = async () => {
-    await postTask(taskInput);
+    if (taskInput == '') {
+      return '';
+    } else {
+      await postTask(taskInput);
 
-    setTaskInput('');
+      setTaskInput('');
 
-    const response = await getAllTasks();
-    setTasks(response.data.dados);
+      const response = await getAllTasks();
+      setTasks(response.data.dados);
+    }
   };
 
   return (
@@ -48,6 +52,12 @@ function App() {
           label='Digite sua tarefa'
           value={taskInput}
           onInput={onChangeTaskInput}
+          onKeyPress={(event) => {
+            if (event.key === 'Enter') {
+              event.preventDefault();
+              saveNewTask();
+            }
+          }}
         />
         <Button
           className='add-task-button'
