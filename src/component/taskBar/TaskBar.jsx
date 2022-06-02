@@ -1,11 +1,17 @@
-import CheckIcon from "@mui/icons-material/Check";
-import DeleteIcon from "@mui/icons-material/Delete";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import "./TaskBar.scss";
+import CheckIcon from '@mui/icons-material/Check';
+import DeleteIcon from '@mui/icons-material/Delete';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import { deleteTask } from '../../api/tasksApi';
+import './TaskBar.scss';
 
-export default function TaskBar({ taskTitle }) {
+export default function TaskBar({ taskTitle, id, shouldUpdateScreen }) {
+  const handleDeleteClick = async (_e) => {
+    await deleteTask(id);
+    shouldUpdateScreen(true);
+  };
+
   return (
     <Box className='taskbar-box'>
       <Typography className='taskbar-title' component='span' variant='body2'>
@@ -13,10 +19,10 @@ export default function TaskBar({ taskTitle }) {
       </Typography>
       <Box className='taskbar-icons'>
         <IconButton>
-          <CheckIcon sx={{ color: "white" }} />
+          <CheckIcon sx={{ color: 'white' }} />
         </IconButton>
-        <IconButton>
-          <DeleteIcon sx={{ color: "white" }} />
+        <IconButton onClick={handleDeleteClick}>
+          <DeleteIcon sx={{ color: 'white' }} />
         </IconButton>
       </Box>
     </Box>

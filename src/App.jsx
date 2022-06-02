@@ -25,16 +25,20 @@ function App() {
   };
 
   const saveNewTask = async () => {
-    if (taskInput == '') {
+    if (taskInput === '') {
       return '';
     } else {
       await postTask(taskInput);
 
       setTaskInput('');
 
-      const response = await getAllTasks();
-      setTasks(response.data.dados);
+      updateScreen();
     }
+  };
+
+  const updateScreen = async () => {
+    const response = await getAllTasks();
+    setTasks(response.data.dados);
   };
 
   return (
@@ -69,7 +73,16 @@ function App() {
       </Box>
       <Box>
         {tasks.map((task) => {
-          return <TaskBar key={task.id} taskTitle={task.description} />;
+          return (
+            <TaskBar
+              key={task._id}
+              id={task._id}
+              taskTitle={task.description}
+              shouldUpdateScreen={(shouldUpdate) =>
+                shouldUpdate && updateScreen()
+              }
+            />
+          );
         })}
       </Box>
     </Container>
