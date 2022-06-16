@@ -19,3 +19,9 @@ export const deleteTask = async (taskId) => {
 
   return response;
 };
+
+export const updateCompletedTask = async (taskId) => {
+  const response = await axios.put(backendURL + `${taskId}`);
+
+  return response;
+};
