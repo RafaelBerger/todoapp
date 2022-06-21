@@ -1,6 +1,7 @@
-import axios from 'axios';
+import axios from "axios";
 
-const backendURL = 'http://localhost:8080/';
+const backendURL = "http://localhost:8080/";
+const backendURLDone = "http://localhost:8080/done";
 
 export const getAllTasks = async () => {
   const response = await axios.get(backendURL);
@@ -23,5 +24,10 @@ export const deleteTask = async (taskId) => {
 export const updateCompletedTask = async (taskId) => {
   const response = await axios.put(backendURL + `${taskId}`);
 
+  return response;
+};
+
+export const getDoneTasks = async () => {
+  const response = await axios.get(backendURLDone);
   return response;
 };
