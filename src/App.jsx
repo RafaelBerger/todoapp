@@ -22,17 +22,18 @@ function App() {
       if (toDoOrDone === "todo") {
         const response = await getAllTasks();
         setTasks(response.data.dados);
-      } else if (toDoOrDone === "done") {
+      }
+      if (toDoOrDone === "done") {
         const response = await getDoneTasks();
         setTasks(response.data.dados);
       }
     };
 
     callAPI();
-  }, []);
+  }, [toDoOrDone]);
 
   const handleChange = (e) => {
-    setToDoOrDone(e.target.attributes.value.textContent);
+    setToDoOrDone(e.target.value);
   };
 
   const onChangeTaskInput = (e) => {
@@ -52,7 +53,8 @@ function App() {
   };
 
   const updateScreen = async () => {
-    const response = await getAllTasks();
+    const response =
+      toDoOrDone === "todo" ? await getAllTasks() : await getDoneTasks();
     setTasks(response.data.dados);
   };
 
@@ -91,6 +93,7 @@ function App() {
         value={toDoOrDone === "todo" ? "todo" : "done"}
         exclusive
         onChange={handleChange}
+        sx={{ marginBottom: "2rem" }}
       >
         <ToggleButton value="todo">A fazer</ToggleButton>
         <ToggleButton value="done">Concluídos</ToggleButton>

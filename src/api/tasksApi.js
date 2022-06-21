@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const backendURL = "http://localhost:8080/";
-const backendURLDone = "http://localhost:8080/done";
 
 export const getAllTasks = async () => {
   const response = await axios.get(backendURL);
@@ -28,6 +27,6 @@ export const updateCompletedTask = async (taskId) => {
 };
 
 export const getDoneTasks = async () => {
-  const response = await axios.get(backendURLDone);
+  const response = await axios.get(`${backendURL}done`);
   return response;
 };
