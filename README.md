@@ -26,6 +26,7 @@ Projeto criado com React, com foco no estudo de Backend
 ## Autores
 
 - [@RafaelBerger](https://www.github.com/RafaelBerger)
+- [@AlanJSimpson](https://www.github.com/AlanJSimpson)
 
 
 ##  ⇩	⇩	 English Version  ⇩	⇩	
@@ -57,3 +58,4 @@ Project created using React, focusing in learning Backend
 ## Authors
 
 - [@RafaelBerger](https://www.github.com/RafaelBerger)
+- [@AlanJSimpson](https://www.github.com/AlanJSimpson)
