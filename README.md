@@ -4,6 +4,8 @@ Aplicação de Anotações
 
 Projeto criado com React, com foco no estudo de Backend
 
+Projeto Backend https://github.com/RafaelBerger/todoapp-api
+
 <div align="left">
 <img src="https://user-images.githubusercontent.com/84355579/176251270-dd33cfa9-ee4f-40d3-a0a9-d9092bd080bb.jpg" width="450px" />  
 </div>
@@ -37,6 +39,8 @@ Projeto criado com React, com foco no estudo de Backend
 Tasks App
 
 Project created using React, focusing in learning Backend
+
+Backend Project https://github.com/RafaelBerger/todoapp-api
 
 <div align="left">
 <img src="https://user-images.githubusercontent.com/84355579/176251270-dd33cfa9-ee4f-40d3-a0a9-d9092bd080bb.jpg" width="450px" />  
