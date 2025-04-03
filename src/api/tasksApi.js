@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const backendURL = "http://localhost:8080/";
+const backendURL = "https://todoapp-api-x9e1.onrender.com/";
 
 export const getAllTasks = async () => {
   const response = await axios.get(backendURL);
